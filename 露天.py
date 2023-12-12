@@ -4,9 +4,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import json
+'''
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
+'''
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 k=input("關鍵字:")
 url=f"https://rtapi.ruten.com.tw/api/rtb/v1/index.php/core/prod?q={k}&type=direct&sort=rnk%2Fdc&limit=200&offset=1"
 driver.get(url)
